@@ -95,14 +95,14 @@ export class CanvasService {
     private backgroundColor = 'rgba(0,0,0,1)';
     textSetChangerIncrement = 0;
     textSet = [
-        {text: 'COINS_INVEST', sphereRadius: 80, sphereSpace: 70, unitTime: 100, time: 10000},
-        {text: 'MONITOR', sphereRadius: 80, sphereSpace: 80, unitTime: 100, time: 4000},
+        {text: 'COINS_INVEST', sphereRadius: 1000, sphereSpace: 100, unitTime: 100, time: 10000},
+        {text: 'MONITOR', sphereRadius: 80, sphereSpace: 100, unitTime: 100, time: 4000},
         // {text: 'KNOW_YOUR_PROFIT', sphereRadius: 90, sphereSpace: 70, unitTime: 100, time: 4000},
         // {text: 'LEARN_MARKET', sphereRadius: 90, sphereSpace: 70, unitTime: 100, time: 4000},
         // {text: 'CHOOSE_BEST_MARKET', sphereRadius: 90, sphereSpace: 70, unitTime: 100, time: 4000},
         {text: 'BE_SMART', sphereRadius: 100, sphereSpace: 100, unitTime: 100, time: 4000},
-        {text: 'ICO_START', sphereRadius: 90, sphereSpace: 70, unitTime: 100, time: 4000},
-        {text: 'JUN_9_2017', sphereRadius: 120, sphereSpace: 70, unitTime: 100, time: 4000},
+        {text: 'ICO_START', sphereRadius: 90, sphereSpace: 100, unitTime: 100, time: 4000},
+        {text: 'JUN_9_2017', sphereRadius: 120, sphereSpace: 120, unitTime: 100, time: 4000},
         // {text: 'HELVETICA', sphereRadius: 140, sphereSpace: 80, unitTime: 100, time: 2000},
         // {text: '@@@@@@@@', sphereRadius: 60 + Math.random() * 60, sphereSpace: 200, unitTime: 100, time: 4000},
         // {text: 'MOVABLE', sphereRadius: 120, sphereSpace: 70, unitTime: 100, time: 2000},
@@ -173,12 +173,12 @@ export class CanvasService {
 
         this.canvas.width = this.canvasWidth;
         this.canvas.height = this.canvasHeight;
-        let $this = this;
+        // let $this = this;
 
         bufferCanvases.forEach((buffer) => {
             let canvas = buffer.nativeElement;
             canvas.getContext('2d').drawImage(
-                $this.bufferImages[canvas.id],
+                this.bufferImages[canvas.id],
                 0,
                 0,
                 100,

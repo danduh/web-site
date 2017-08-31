@@ -26,3 +26,15 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+# Road Map - Maon features:
+
+* Monitor your investments (list of features).
+    - add purchassed coins. should support: current price, given price, spend amount. **done**
+    - add wallet for tracking **future**
+    - add smart language in transaction's comments.
+
+* Monitor markets/changers
+

@@ -36,6 +36,8 @@ const polarToRectangle = function (dX, dY, radius) {
     return {x: y, y: z, z: x};
 };
 
+export const LETTER_SIZE = 1.5;
+
 const vertex3d = function (param) {
     this.affineIn = {};
     this.affineOut = {};
@@ -47,7 +49,7 @@ const vertex3d = function (param) {
     if (param.size !== undefined) {
         this.affineIn.size = param.size;
     } else {
-        this.affineIn.size = {x: 1, y: 1, z: 1};
+        this.affineIn.size = {x: LETTER_SIZE, y: LETTER_SIZE, z: 0};
     }
     if (param.rotate !== undefined) {
         this.affineIn.rotate = param.rotate;
@@ -196,7 +198,10 @@ export class Sphere {
             this.freeDegreeSpeed[j] = {theta: 1 * Math.random() - 0.5, phi: 1 * Math.random() - 0.5};
         }
 
-        for (let i in chars) {
+        let letters = Object.keys(chars);
+        let _length = letters.length;
+        while (_length--) {
+            let i = letters[_length];
             let buffer = document.getElementById(i)['getContext']('2d').getImageData(0, 0, 100, 100).data;
             this.charsMap[i] = [];
             let self = this;
